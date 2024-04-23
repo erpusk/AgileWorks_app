@@ -1,0 +1,27 @@
+﻿@model List<WebApplication.Models.Ticket>
+
+@{
+    ViewBag.Title = "Support Tickets";
+}
+
+<h2>Support Tickets</h2>
+
+<form action="@Url.Action("AddTicket")" method="post">
+    <label for="description">Description:</label>
+    <input type="text" name="description" required>
+    <label for="deadline">Deadline:</label>
+    <input type="datetime-local" name="deadline" required>
+    <button type="submit">Add Ticket</button>
+</form>
+
+<ul>
+    @foreach (var ticket in Model) {
+        <li style="color:@(ticket.IsResolved || ticket.DeadlineTime < DateTime.Now || (ticket.DeadlineTime - DateTime.Now).TotalHours < 1 ? "red" : "black")">
+            @ticket.Description, Submission Time: @ticket.SubmissionTime, Deadline: @ticket.DeadlineTime
+            <form action="@Url.Action("MarkAsResolved")" method="post">
+                <input type="hidden" name="ticketIndex" value="@Model.IndexOf(ticket)">
+                <button type="submit">Mark as Resolved</button>
+            </form>
+        </li>
+    }
+</ul>

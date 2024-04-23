@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center">
+    <div class="jumbotron mt-5">
+        <h1 class="display-3">Welcome to the Help Desk</h1>
+        <p class="lead">Efficiently manage support tickets with ease.</p>
+        <hr class="my-4">
+        <p>Quickly create, track, and resolve tickets to provide excellent support.</p>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("Create", "ActiveTickets")" role="button">Create a New Ticket</a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Streamlined Ticket Creation</h5>
+                    <p class="card-text">Efficiently create new tickets with our intuitive interface.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Track and Manage Tickets</h5>
+                    <p class="card-text">Easily track ticket statuses and manage assignments.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Efficient Ticket Resolution</h5>
+                    <p class="card-text">Resolve tickets promptly to provide timely support to users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
